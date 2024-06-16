@@ -16,15 +16,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vaZ-m1-Gjs">
-                                <rect key="frame" x="161" y="570" width="70" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Entrar"/>
-                                <connections>
-                                    <segue destination="jtp-YM-wmv" kind="show" id="WK9-Qg-fEI"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GaN-W6-owE">
                                 <rect key="frame" x="142" y="629" width="108" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -35,15 +26,32 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cartão de Visitas" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Sm-EW-0wK">
-                                <rect key="frame" x="94" y="229" width="205" height="34"/>
+                                <rect key="frame" x="94" y="224" width="205" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cartao" translatesAutoresizingMaskIntoConstraints="NO" id="SCn-OF-J7k">
+                                <rect key="frame" x="0.0" y="103" width="393" height="420"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vaZ-m1-Gjs">
+                                <rect key="frame" x="161" y="586" width="70" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Entrar"/>
+                                <connections>
+                                    <segue destination="jtp-YM-wmv" kind="show" id="WK9-Qg-fEI"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="SCn-OF-J7k" secondAttribute="trailing" id="5un-zG-nQX"/>
+                            <constraint firstItem="vaZ-m1-Gjs" firstAttribute="top" secondItem="SCn-OF-J7k" secondAttribute="bottom" id="896-vA-1A7"/>
+                            <constraint firstItem="SCn-OF-J7k" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="H0J-jJ-Nmz"/>
+                            <constraint firstItem="SCn-OF-J7k" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ywE-Xq-aKE"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Xql-Hz-Tlv"/>
                 </viewController>
@@ -51,10 +59,10 @@
             </objects>
             <point key="canvasLocation" x="962.59541984732823" y="-27.464788732394368"/>
         </scene>
-        <!--View Controller-->
+        <!--Create Account View Controller-->
         <scene sceneID="4lW-vS-TDe">
             <objects>
-                <viewController id="xUZ-RF-qV6" sceneMemberID="viewController">
+                <viewController id="xUZ-RF-qV6" customClass="CreateAccountViewController" customModule="CartaoDeVisitasIOS2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DIx-sC-2pJ">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -64,6 +72,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Criar conta"/>
+                                <connections>
+                                    <action selector="signupClicked:" destination="xUZ-RF-qV6" eventType="touchUpInside" id="juC-t3-aga"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Digite seu e-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NKG-5x-kRu">
                                 <rect key="frame" x="59" y="302" width="274" height="34"/>
@@ -82,6 +93,11 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="Zxv-kt-31B"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="NKG-5x-kRu" id="XPF-t3-BZC"/>
+                        <outlet property="passwordTextField" destination="BV4-SJ-O8Z" id="Lbd-Qk-RSi"/>
+                        <segue destination="IYB-76-h2U" kind="show" identifier="goToNext" id="k00-5W-TEv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E4G-Rs-Cel" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -117,10 +133,10 @@
             </objects>
             <point key="canvasLocation" x="53" y="664"/>
         </scene>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="By0-Yc-di5">
             <objects>
-                <viewController id="jtp-YM-wmv" customClass="ViewController" customModule="CartaoDeVisitasIOS2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="jtp-YM-wmv" customClass="LoginViewController" customModule="CartaoDeVisitasIOS2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mjU-Gj-55q">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -131,7 +147,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Entrar"/>
                                 <connections>
-                                    <action selector="loginClicked:" destination="jtp-YM-wmv" eventType="touchUpInside" id="ok0-i8-gWg"/>
+                                    <action selector="loginClicked:" destination="jtp-YM-wmv" eventType="touchUpInside" id="FEz-fa-zyg"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Digite seu e-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="C16-sg-IwA">
@@ -152,13 +168,30 @@
                     </view>
                     <navigationItem key="navigationItem" id="35y-OY-cNI"/>
                     <connections>
-                        <outlet property="emailTextField" destination="C16-sg-IwA" id="Hcp-05-oGX"/>
-                        <outlet property="passwordTextField" destination="hoK-Sv-guF" id="iOc-qO-GiR"/>
+                        <outlet property="emailTextField" destination="C16-sg-IwA" id="ra4-9Y-7kT"/>
+                        <outlet property="passwordTextField" destination="hoK-Sv-guF" id="quH-Cm-PFQ"/>
+                        <segue destination="IYB-76-h2U" kind="show" identifier="goToNext" id="Sxe-fK-BsO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fFe-Jo-ial" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1704.5801526717557" y="-375.35211267605638"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="3jj-gW-EFP">
+            <objects>
+                <viewController id="IYB-76-h2U" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="scG-be-EJ5">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="0Bs-hl-IhN"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="YEh-Pb-LDb"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ffM-rZ-NmW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2488" y="-41"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="rDX-uf-Gkj">
@@ -179,7 +212,11 @@
             <point key="canvasLocation" x="35.877862595419849" y="-27.464788732394368"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="k00-5W-TEv"/>
+    </inferredMetricsTieBreakers>
     <resources>
+        <image name="cartao" width="530" height="420"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
