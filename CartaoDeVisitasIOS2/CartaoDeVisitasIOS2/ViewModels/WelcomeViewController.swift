@@ -28,7 +28,7 @@ class WelcomeViewController: UIViewController {
         scrollView.frame = holderView.bounds
         holderView.addSubview(scrollView)
         
-        let titles = ["Bem-vindo(a)", "Ao Cartão de Visitas", "Registre-se!"]
+        let titles = ["Bem-vindo(a)", "Seu cartão de visitas", "Registre-se!"]
         for x in 0..<3 {
             let pageView = UIView(frame: CGRect(x: CGFloat(x) * holderView.frame.size.width, y: 0, width: holderView.frame.size.width, height: holderView.frame.size.height))
             scrollView.addSubview(pageView)

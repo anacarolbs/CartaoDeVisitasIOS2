@@ -14,6 +14,7 @@
 		8EF398F22C1BEF7D0027EEBC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EF398F12C1BEF7D0027EEBC /* Assets.xcassets */; };
 		8EF398F52C1BEF7D0027EEBC /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 8EF398F42C1BEF7D0027EEBC /* Base */; };
 		8EF398FD2C1CB5F00027EEBC /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF398FC2C1CB5F00027EEBC /* WelcomeViewController.swift */; };
+		8EF399012C1E91CA0027EEBC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF399002C1E91CA0027EEBC /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		8EF398F42C1BEF7D0027EEBC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8EF398F62C1BEF7D0027EEBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8EF398FC2C1CB5F00027EEBC /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		8EF399002C1E91CA0027EEBC /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,16 +60,33 @@
 		8EF398E72C1BEF7A0027EEBC /* CartaoDeVisitasIOS2 */ = {
 			isa = PBXGroup;
 			children = (
+				8EF398FF2C1E50290027EEBC /* Files */,
+				8EF398FE2C1E50010027EEBC /* ViewModels */,
 				8EF398E82C1BEF7A0027EEBC /* AppDelegate.swift */,
 				8EF398EA2C1BEF7A0027EEBC /* SceneDelegate.swift */,
 				8EF398EC2C1BEF7A0027EEBC /* ViewController.swift */,
+			);
+			path = CartaoDeVisitasIOS2;
+			sourceTree = "<group>";
+		};
+		8EF398FE2C1E50010027EEBC /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				8EF398FC2C1CB5F00027EEBC /* WelcomeViewController.swift */,
+				8EF399002C1E91CA0027EEBC /* LoginViewController.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		8EF398FF2C1E50290027EEBC /* Files */ = {
+			isa = PBXGroup;
+			children = (
 				8EF398EE2C1BEF7A0027EEBC /* Main.storyboard */,
 				8EF398F12C1BEF7D0027EEBC /* Assets.xcassets */,
 				8EF398F32C1BEF7D0027EEBC /* LaunchScreen.storyboard */,
 				8EF398F62C1BEF7D0027EEBC /* Info.plist */,
-				8EF398FC2C1CB5F00027EEBC /* WelcomeViewController.swift */,
 			);
-			path = CartaoDeVisitasIOS2;
+			name = Files;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,6 +163,7 @@
 				8EF398ED2C1BEF7A0027EEBC /* ViewController.swift in Sources */,
 				8EF398FD2C1CB5F00027EEBC /* WelcomeViewController.swift in Sources */,
 				8EF398E92C1BEF7A0027EEBC /* AppDelegate.swift in Sources */,
+				8EF399012C1E91CA0027EEBC /* LoginViewController.swift in Sources */,
 				8EF398EB2C1BEF7A0027EEBC /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

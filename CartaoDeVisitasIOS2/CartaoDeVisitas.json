@@ -1,0 +1,174 @@
+{
+  "uuid": "f6c00b6b-7cec-4b77-8818-6eafa02e58ce",
+  "lastMigration": 32,
+  "name": "CartaoDeVisitas",
+  "endpointPrefix": "",
+  "latency": 0,
+  "port": 3001,
+  "hostname": "",
+  "folders": [],
+  "routes": [
+    {
+      "uuid": "c4b4fb73-a41e-4640-9efc-0b98ecd98628",
+      "type": "http",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "protected",
+      "responses": [
+        {
+          "uuid": "96b09469-6f10-44a4-bd19-adb47631888c",
+          "body": "{\n  \"response\": \"success\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Success - Get all data",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "responseMode": null
+    },
+    {
+      "uuid": "1a8f7d9e-088f-4d5c-9477-c585298fa98b",
+      "type": "crud",
+      "documentation": "",
+      "method": "",
+      "endpoint": "users",
+      "responses": [
+        {
+          "uuid": "28465042-cf26-47ef-b7d3-cf5c8f02ac98",
+          "body": "{}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "bodyType": "DATABUCKET",
+          "filePath": "",
+          "databucketID": "ln7d",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "responseMode": null
+    },
+    {
+      "uuid": "95c78558-0bd7-41d2-89dc-c0ea9279abb2",
+      "type": "http",
+      "documentation": "",
+      "method": "all",
+      "endpoint": "*",
+      "responses": [
+        {
+          "uuid": "6cdb62c8-3fa7-4e82-be5d-ec23614a3d43",
+          "body": "{\n  \"error\": \"unauthorized\"\n}",
+          "latency": 0,
+          "statusCode": 401,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "header",
+              "modifier": "Authorization",
+              "value": "",
+              "invert": false,
+              "operator": "null"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "responseMode": "FALLBACK"
+    }
+  ],
+  "rootChildren": [
+    {
+      "type": "route",
+      "uuid": "c4b4fb73-a41e-4640-9efc-0b98ecd98628"
+    },
+    {
+      "type": "route",
+      "uuid": "1a8f7d9e-088f-4d5c-9477-c585298fa98b"
+    },
+    {
+      "type": "route",
+      "uuid": "95c78558-0bd7-41d2-89dc-c0ea9279abb2"
+    }
+  ],
+  "proxyMode": false,
+  "proxyHost": "",
+  "proxyRemovePrefix": false,
+  "tlsOptions": {
+    "enabled": false,
+    "type": "CERT",
+    "pfxPath": "",
+    "certPath": "",
+    "keyPath": "",
+    "caPath": "",
+    "passphrase": ""
+  },
+  "cors": true,
+  "headers": [
+    {
+      "key": "Content-Type",
+      "value": "application/json"
+    },
+    {
+      "key": "Access-Control-Allow-Origin",
+      "value": "*"
+    },
+    {
+      "key": "Access-Control-Allow-Methods",
+      "value": "GET,POST,PUT,PATCH,DELETE,HEAD,OPTIONS"
+    },
+    {
+      "key": "Access-Control-Allow-Headers",
+      "value": "Content-Type, Origin, Accept, Authorization, Content-Length, X-Requested-With"
+    }
+  ],
+  "proxyReqHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "proxyResHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "data": [
+    {
+      "uuid": "6abd2c69-70df-4635-bc2a-6378364f59b4",
+      "id": "ln7d",
+      "name": "Users",
+      "documentation": "",
+      "value": "[\n  {{#repeat 10}}\n    {\n      \"id\": \"{{faker 'string.uuid'}}\",\n      \"name\": \"{{faker 'person.firstName'}} {{faker 'person.lastName'}}\",\n      \"email\": \"{{faker 'internet.email'}}\",\n      \"password\": \"{{faker 'internet.password'}}\",\n      \"phone\": \"{{faker 'phone.number'}}\",\n      \"job\": \"{{ faker 'person.jobTitle' }}\",\n      \"linkedin\": \"{{ faker 'internet.url' }}\",\n      \"github\": \"{{ faker 'internet.url' }}\"\n    }\n  {{/repeat}}\n]"
+    }
+  ],
+  "callbacks": []
+}
